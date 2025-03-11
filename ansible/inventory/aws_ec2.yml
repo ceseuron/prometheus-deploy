@@ -1,0 +1,6 @@
+plugin: amazon.aws.aws_ec2
+aws_profile: "{{ lookup('env', 'AWS_PROFILE') | default('default', true) }}"
+region: "{{ lookup('env', 'AWS_REGION') }}"
+filters:
+  "tag:environment": "test"
+  "tag:application": "prometheus"
